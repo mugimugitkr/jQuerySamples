@@ -26,7 +26,7 @@ $(function() {
 
   // 画面がスクロールされたら
   $(window).scroll(function() {
-
+    
     // 画面のスクロールされた量を取得
     let scrollTop = $(document).scrollTop();
 
@@ -38,6 +38,31 @@ $(function() {
     } else {
       // スクロール量が500を超えていない
       $('.arrow').fadeOut();
+    }
+
+    // section2を取得
+    let section2 = $('.section2');
+
+    // section2の表示位置（上の部分）を取得
+    let section2Top = section2.offset().top;
+
+    if (scrollTop > section2Top - 100) {
+      // スクロール量がsection2のTopをこえた場合
+      $('.hello-scroll').fadeIn();
+    } else {
+      // スクロール量がsection2のTopをこえていない場合
+      $('.hello-scroll').fadeOut();
+    }
+
+    // section3を取得
+    let section3 = $('.section3');
+
+    // section3の表示位置（上の部分）を取得
+    let section3Top = section3.offset().top;
+
+    if (scrollTop > section3Top - 200) {
+      // スクロール量がsection3のTopをこえた場合
+      $('.section3').animate({left: 0}, 1000);
     }
 
   })
