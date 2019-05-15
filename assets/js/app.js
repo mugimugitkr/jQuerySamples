@@ -9,4 +9,12 @@ $(function() {
     // フォーカスされたliの 小要素を 表示する
     $(this).children().slideDown('slow');
   });
+
+  // 画面のどこかがクリックされたら
+  $('html').click(function() {
+
+    $('.ddmenu ul').slideUp();
+  
+  });
+
 })
